@@ -112,7 +112,7 @@ function FloatingText({ children }) {
 
 
 
-function MainPage({ section }) {
+function MainPage({ section, language }) {
   const currentSection = section || 'Welcome';
   const [projectView, setProjectView] = useState(null);
 
@@ -121,11 +121,11 @@ function MainPage({ section }) {
     case 'Welcome':
   content = (
     <FloatingText>
-      Benvenuto sul mio sito!<br />
-      Clicca sulle voci in alto per conoscermi meglio.
+      {translations[language].welcome}
     </FloatingText>
   );
   break;
+
 
 
 /*OGGETTO ABOUT ME*/
@@ -143,25 +143,11 @@ function MainPage({ section }) {
 
       <div className="about-text-container">
         <div className="about-text">
-          <h1>Me, in poche parole</h1>
-          <p>
-            Ciao! Mi chiamo Simone Arena e sono nato a Catania il 22 Aprile del 1995. Ho studiato al <strong>liceo classico Mario Cutelli</strong> di Catania e poi presso <strong>l'Università di Catania</strong> dove ho conseguito il titolo di <strong>Ingegnere Informatico</strong> (laurea di primo livello). Nel mio percorso ho sempre cercato di coniugare gli studi umanistici e classici a quelli ingegneristici e scientifici. Nella mia tesi universitaria ho proprio cercato di esplorare entrambi i campi.
+  <h1>{translations[language].aboutMeTitle}</h1>
+  <p dangerouslySetInnerHTML={{ __html: translations[language].aboutMeText }} />
+</div>
 
-            <br />Sono inoltre un appassionato sviluppatore in <strong>Python</strong> e del framework <strong>React</strong> per sviluppo web, con buone conoscenze dei linguaggi di programmazione come C, C#, C++, Java, Javascript, PHP, HTML, CSS e MySQL.
-            Amo sviluppare applicazioni funzionali e interattive, con design e interfacce originali.
-          </p>
-        </div>
-        <div className="additional-info">
-          <p>
-            Mi piace moltissimo viaggiare e ho visitato molte città d'Europa fra cui <strong>Nizza</strong>, <strong>Cannes</strong> e il principato di <strong>Monaco</strong> durante le medie. Poi <strong>Parigi</strong> al liceo. Dopo il diploma ho frequentato il college <strong>Haileybury</strong> di Londra per due settimane, dove ho ricevuto un attestato di lingua inglese. In seguito sono tornato a <strong>Londra</strong> una seconda volta in visita. Sono anche andato a <strong>Berlino</strong> e <strong>Monaco</strong> di Baviera (dove ho visitato il castello di Neuschwanstein), poi <strong>Barcellona</strong> e <strong>Salisburgo</strong>. In Italia ho visitato molte città fra cui <strong>Milano</strong>, <strong>Roma</strong>, <strong>Torino</strong>, <strong>Palermo</strong>, <strong>Bologna</strong>, <strong>Venezia</strong>, <strong>Genova</strong>, <strong>Padova</strong> e <strong>Firenze</strong>.
-            <br /><br /> Parlo <strong>Inglese</strong> abbastanza bene (B1) e conosco il <strong>Francese</strong> a livello elementare (A1).
-            <br /><br />Durante il tempo libero mi piace molto leggere. Leggo soprattutto narrativa, classici, sci-fi, romanzi e divulgazione scientifica. I libri che ho nel cuore sono <strong>Il nome della rosa</strong> di Umberto Eco, <strong>Fiori per Algernon</strong> di Daniel Keyes, la saga di <strong>Foundation</strong> di Isaac Asimov e de <strong>Il Signore degli Anelli</strong> e il <strong>Silmarillion</strong> di J.R.R. Tolkien.
-            <br /><br />Oltre a leggere, mi piace molto allenare la mente con gli scacchi. Non sono molto bravo, ma mi esercito ogni giorno.
-            <br /><br />
-            Per finire amo andare al cinema, guardare film e serie tv, cucinare, giocare ai videogiochi e fare escursioni una volta ogni tanto.
-            <br />
-          </p>
-        </div>
+        
       </div>
     </div>
   );
