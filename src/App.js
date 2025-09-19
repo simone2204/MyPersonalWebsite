@@ -23,7 +23,6 @@ function Navbar({ onSelect, language, setLanguage }) {
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('About Me'); }}>{language === 'it' ? 'Chi Sono' : 'About Me'}</a></li>
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Projects'); }}>{language === 'it' ? 'Progetti' : 'Projects'}</a></li>
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Hobbies'); }}>{language === 'it' ? 'Hobby' : 'Hobbies'}</a></li>
-        <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Passions'); }}>{language === 'it' ? 'Passioni' : 'Passions'}</a></li>
         <li className="dropdown">
           <a href="#">{language === 'it' ? 'Contatti' : 'Contact Me'}</a>
           <div className="dropdown-content">
@@ -67,12 +66,6 @@ const variantsBySection = {
     animate: { scale: 1, opacity: 1 },
     exit: { scale: 1.2, opacity: 0 }
   },
-  
-  'Passions': {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: -50, opacity: 0 }
-  }
 };
 
 function FloatingText({ children }) {
@@ -247,7 +240,6 @@ case 'Projects':
   break;
 
   
-      
   case 'Hobbies':
   content = (
     <div className="hobbies-section">
@@ -283,9 +275,7 @@ case 'Projects':
   break;
   
 
-    case 'Passions':
-      content = <h1>Le mie più grandi passioni!</h1>;
-      break;
+    
 
     default:
       content = <h1>Sezione non trovata.</h1>;
