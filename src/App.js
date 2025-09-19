@@ -74,12 +74,16 @@ function FloatingText({ children }) {
   useEffect(() => {
     async function sequence() {
       // prima fa apparire il testo
-      await controls.start({ opacity: 1, y: 0, rotate: 0, transition: { duration: 1.2, ease: "easeOut" } });
+      await controls.start({ 
+        opacity: 1, 
+        y: 0, 
+        rotate: 0, 
+        transition: { duration: 1.2, ease: "easeOut" } });
       // poi avvia il loop di oscillazione
       controls.start({
         y: [0, 1, 0, -1, 0],
         x: [0, 0.5, 0, -0.5, 0],
-        rotate: [0, 2, 0, -2, 10],
+        rotate: [0, 1, 0, -1, 0],
         transition: {
           duration: 5,
           ease: "easeInOut",
