@@ -11,10 +11,47 @@ body {
   font-size: x-large;
   background: linear-gradient(to right, rgb(178, 231, 206), rgb(87, 134, 172));
   color: white;
-  padding: 50px;
+  padding: 40px;
   margin-top: 0;
   position: relative;
   top: 0;
+}
+
+.Profiles-List {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.Profiles-List a {
+    color: white;
+    text-decoration: none;
+    padding: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.Profiles-List a::after {
+  content: "";
+  position: absolute;
+  width: 72%;
+  height: 2px;
+  background-color: #fff;
+  bottom: -0.09pc;
+  left: 0.15pc;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.Profiles-List a:hover::after {
+  transform: scaleX(1.35);
 }
 
 .nav-list {
@@ -120,10 +157,9 @@ body {
 
 /* Background animato per la card container solo per Welcome */
 .card-container.welcome-bg {
-  background: linear-gradient(-90deg, #dfedef, #81c2ee);
+  background: linear-gradient(-90deg, #9a66d1, #4c7ed4, #78d6b2, #e9e2e5);
   background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
-  border-radius: 0;
+  animation: gradientShift 12s ease infinite;
 }
 
 /* Animazione gradiente background */
@@ -161,20 +197,40 @@ body {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: -250px;
-  background-color: rgba(222, 247, 234, 0.543);
+  margin-top: -160px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
 .profile-pic {
-  width: 200px;
-  height: 200px;
-  object-fit:cover;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #85e8d1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  align-self: flex-start;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #d6e0e0, #4ebec2) border-box;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  animation: glow 6s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #6a11cb;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #2575fc;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #6a11cb;
+  }
 }
 
 .about-text {
@@ -184,8 +240,12 @@ body {
 }
 
 .about-text h1 {
-  color: rgb(53, 50, 91);
-  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3bd0e4, #e6eaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
 .about-text p {
@@ -239,22 +299,22 @@ body {
   background-image: url('../public/sfondo_projects.png');
   text-align: center;
   padding: 10rem;
-  margin-top: -100px;
+  margin-top: -90px;
   border-radius: 20px;
   height: 40vh;
 }
 
 .projects-title {
+  margin-top: -9rem;
   font-size: 2.2rem;
   color: #ffffff;
   margin-bottom: 2rem;
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -268,7 +328,7 @@ body {
 }
 
 .project-card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: #2d5f73;
 }
 

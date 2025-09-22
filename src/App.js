@@ -37,6 +37,10 @@ function Navbar({ onSelect, language, setLanguage }) {
           </select>
         </li>
       </ul>
+      <ul className='Profiles-List'>
+        <li><a href="https://github.com/simone2204">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/simone-arena-502b48a0/">Linkedin Profile</a></li>
+      </ul>
     </nav>
   );
 }
@@ -135,22 +139,26 @@ function MainPage({ section, language }) {
         className="profile-pic"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2.5, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       />
 
-      <div className="about-text-container">
-        <div className="about-text">
-  <h1>{translations[language].aboutMeTitle}</h1>
-  <p dangerouslySetInnerHTML={{ __html: translations[language].aboutMeText }} />
-</div>
+      <motion.div
+  className="about-text-container"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+>
+  <div className="about-text">
+    <h1>{translations[language].aboutMeTitle}</h1>
+    <p dangerouslySetInnerHTML={{ __html: translations[language].aboutMeText }} />
+  </div>
+</motion.div>
 
-        
-      </div>
     </div>
   );
   break;
 
-  
+
 /*OGGETTO PROJECTS*/
 case 'Projects':
   content = (
@@ -185,6 +193,17 @@ case 'Projects':
               <p>{translations[language].project2.shortDesc}</p>
               <p>{translations[language].project2.clickDetails}</p>
             </motion.div>
+            
+            <motion.div
+              className="project-card"
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setProjectView('project3')}
+            >
+              <h3>{translations[language].project3.shortTitle}</h3>
+              <p>{translations[language].project3.shortDesc}</p>
+              <p>{translations[language].project3.clickDetails}</p>
+            </motion.div>
+
           </div>
         </motion.div>
       ) : (
@@ -237,6 +256,27 @@ case 'Projects':
               </div>
             </>
           )}
+
+                 {projectView === 'project3' && (
+          <>
+            <h2>{translations[language].project3.fullTitle}</h2>
+            <p dangerouslySetInnerHTML={{ __html: translations[language].project3.fullDesc }} />
+            <div className="project-link-box">
+              <h3>{translations[language].project3.githubTitle}</h3>
+              <a
+                href="https://github.com/simone2204/FilesManagement_App-with-LLAMA-AI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link"
+              >
+                → GitHub
+              </a>
+              <p>{translations[language].project3.githubText}</p>
+            </div>
+          </>
+        )}
+
+
         </motion.div>
       )}
     </AnimatePresence>

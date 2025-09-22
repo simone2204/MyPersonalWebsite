@@ -27,7 +27,7 @@ const translations = {
     backToProjects: "← Torna ai progetti",
     project1: {
       shortTitle: "Progetto IA Educativa",
-      shortDesc: "Implementazione di LLAMA e Chat-GPT",
+      shortDesc: "Implementazione di un Agente Langchain, tramite Python e framework Langchain, per supportare lo studio e l'apprendimento",
       clickDetails: "Clicca per vedere i dettagli",
       fullTitle: "Progetto Tesi Uni: Un Agente Langchain per supportare lo studio e l'apprendimento",
       fullDesc: `
@@ -40,6 +40,7 @@ const translations = {
       githubTitle: "Codice sorgente su GitHub",
       githubText: "Troverai due implementazioni: una usa LLAMA e l'altra Chat GPT 3.5 Turbo di OpenAI."
     },
+
     project2: {
       shortTitle: "Progetto IA OFFLINE",
       shortDesc: "Un piccolo cervello elettronico che non ha bisogno di connessione internet",
@@ -54,6 +55,21 @@ const translations = {
       githubTitle: "Codice su GitHub",
       githubText: "Qui trovi il codice del chatbot offline e le istruzioni per eseguire il modello IA in locale:"
     },
+
+    project3: {
+      shortTitle: "App Gestione Clienti con IA",
+      shortDesc: "Un app desktop realizzata con Python per la gestione dei clienti e dei file integrata con l'IA LLAMA",
+      clickDetails: "Clicca per vedere i dettagli",
+      fullTitle: "App Gestione Clienti e File integrata con LLAMA IA",
+      fullDesc: `Questo progetto nasce dal problema di dover gestire numerosi clienti e i relativi file e documenti. L'app è stata realizzata con <strong>Python</strong> e 
+                 permette di registrare i clienti nell'app tramite nome, cognome e codice fiscale (con relativo controllo di codice fiscale corretto)
+                 e offre all'utente la possibilità di gestirne i file di vari formati, PDF, JPEG, PNG eccetera. L'integrazione con l'IA LLAMA permette inoltre di 
+                 recuperare le informazioni principali dai file dei clienti. 
+      `,
+      githubTitle: "Codice sorgente su GitHub",
+      githubText: "Puoi trovare il codice completo su GitHub."
+    },
+
     hobbiesTitle: "Questi sono i miei hobby",
     hobbies: {
       travelTitle: "✈️ Viaggiare",
@@ -100,7 +116,7 @@ Finally, I love going to the cinema, watching films and TV series, cooking, play
     backToProjects: "← Back to projects",
     project1: {
       shortTitle: "Educational AI Project",
-      shortDesc: "Implementation of LLAMA and Chat-GPT",
+      shortDesc: "Implementation of a Langchain Agent, using Python and the Langchain framework, to support study and learning",
       clickDetails: "Click to view details",
       fullTitle: "University Thesis Project: A Langchain Agent to support study and learning",
       fullDesc: `
@@ -113,6 +129,7 @@ Finally, I love going to the cinema, watching films and TV series, cooking, play
       githubTitle: "Source code on GitHub",
       githubText: "You will find two implementations: one with LLAMA and the other with Chat GPT 3.5 Turbo by OpenAI."
     },
+
     project2: {
       shortTitle: "OFFLINE AI Project",
       shortDesc: "A small electronic brain with no internet required",
@@ -128,6 +145,19 @@ Finally, I love going to the cinema, watching films and TV series, cooking, play
       githubTitle: "Code on GitHub",
       githubText: "Here you can find the offline chatbot code and instructions to run the AI model locally:"
     },
+    project3: {
+      shortTitle: "Customer Management App with AI",
+      shortDesc: "A desktop application developed with Python for customer and file management, integrated with LLAMA AI.",
+      clickDetails: "Click to see details",
+      fullTitle: "Customer and File Management App integrated with LLAMA IA",
+      fullDesc: `This project arose from the problem of having to manage numerous customers and their files and documents. The app was developed using <strong>Python</strong> and 
+                 allows customers to be registered in the app by name, surname and tax code (with verification of the correct tax code)
+                 and offers users the possibility to manage files in various formats, such as PDF, JPEG, PNG, etc. Integration with LLAMA AI also allows 
+                 key information to be retrieved from customer files.`,
+      githubTitle: "Source code on GitHub",
+      githubText: "You can find the full code on GitHub."
+    },
+
     hobbiesTitle: "These are my hobbies",
     hobbies: {
       travelTitle: "✈️ Traveling",
