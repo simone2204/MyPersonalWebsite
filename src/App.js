@@ -38,8 +38,8 @@ function Navbar({ onSelect, language, setLanguage }) {
         </li>
       </ul>
       <ul className='Profiles-List'>
-        <li><a href="https://github.com/simone2204">GitHub Profile</a></li>
-        <li><a href="https://www.linkedin.com/in/simone-arena-502b48a0/">Linkedin Profile</a></li>
+        <li><a href="https://github.com/simone2204">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/simone-arena-502b48a0/">Linkedin</a></li>
       </ul>
     </nav>
   );
@@ -121,9 +121,25 @@ function MainPage({ section, language }) {
   switch (currentSection) {
     case 'Welcome':
   content = (
-    <FloatingText>
-      {translations[language].welcome}
-    </FloatingText>
+    <motion.div
+      className="welcome-content"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.img
+        src="/foto_0.jpg"
+        alt="Foto di Simone Arena"
+        className="welcome-photo"
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      />
+
+      <FloatingText>
+        {translations[language].welcome}
+      </FloatingText>
+    </motion.div>
   );
   break;
 

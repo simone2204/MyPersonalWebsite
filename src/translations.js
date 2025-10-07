@@ -2,8 +2,7 @@
 // ITALIAN TRANSLATIONS
 const translations = {
   it: {
-    welcome: "Benvenuto sul mio sito! Clicca sulle voci in alto per conoscermi meglio.",
-    hobbiesTitle: "Questi sono i miei hobby",
+    welcome: "Ciao! Io sono Simone Arena. Benvenuto nel mio sito web! Clicca sulle sezioni in alto per sapere di più su di me",
     aboutMeTitle: "Me, in poche parole",
     aboutMeText:
     `
@@ -23,7 +22,6 @@ const translations = {
             Per finire amo andare al cinema, guardare film e serie tv, cucinare, giocare ai videogiochi e fare escursioni una volta ogni tanto.
             <br />
           </p>`,
-    projectsTitle:"Ecco alcuni dei miei progetti",
     backToProjects: "← Torna ai progetti",
     project1: {
       shortTitle: "Progetto IA Educativa",
@@ -70,7 +68,6 @@ const translations = {
       githubText: "Puoi trovare il codice completo su GitHub."
     },
 
-    hobbiesTitle: "Questi sono i miei hobby",
     hobbies: {
       travelTitle: "✈️ Viaggiare",
       travelText: "Amo esplorare nuove città, culture e paesaggi, soprattutto in Europa.",
@@ -90,8 +87,7 @@ const translations = {
   // _________________________________________________________________________________
   // ENGLISH TRANSLATIONS
   en: {
-    welcome: "Welcome to my website! Click the sections above to learn more about me.",
-    hobbiesTitle: "These are my hobbies",
+    welcome: "Hello! I'm Simone Arena. Welcome to my website! Click on the sections above to find out more about me",
     aboutMeTitle: "Me, in a nutshell",
     aboutMeText:
     `
@@ -112,7 +108,6 @@ Finally, I love going to the cinema, watching films and TV series, cooking, play
 <br />
 </p>`,
 
-    projectsTitle: "Here are some of my projects",
     backToProjects: "← Back to projects",
     project1: {
       shortTitle: "Educational AI Project",
@@ -158,7 +153,6 @@ Finally, I love going to the cinema, watching films and TV series, cooking, play
       githubText: "You can find the full code on GitHub."
     },
 
-    hobbiesTitle: "These are my hobbies",
     hobbies: {
       travelTitle: "✈️ Traveling",
       travelText: "I love exploring new cities, cultures, and landscapes, especially in Europe.",
