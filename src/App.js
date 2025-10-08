@@ -54,16 +54,28 @@ const variantsBySection = {
   },
 
   'About Me': {
-    initial: { x: -100, opacity: 1, scale: 0.8 },
-  animate: { x: 0, opacity: 1, scale: 1, transition: { duration: 0 } },
-  exit: { x: 100, opacity: 0, scale: 0.8, transition: { duration: 0 } },
+  initial: { x: -100, opacity: 0, scale: 0.9 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" }
   },
+  exit: {
+    x: 100,
+    opacity: 0,
+    scale: 0.9,
+    transition: { duration: 0.6, ease: "easeIn" }
+  },
+},
+
 
   'Projects': {
-    initial: { y: 300, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 50 } },
-  exit: { }
-  },
+  initial: { y: 100, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  exit: { y: -100, opacity: 0, transition: { duration: 0.6, ease: "easeIn" } },
+},
+
 
   'Hobbies': {
     initial: { scale: 0.8, opacity: 0 },

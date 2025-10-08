@@ -11,7 +11,7 @@ body {
   font-size: x-large;
   background-image: url('../public/sfondo4.png');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   padding: 40px;
   margin-top: 0;
   position: relative;
@@ -140,6 +140,7 @@ body {
   align-items: center;
   height: 90vh;
   overflow-y: auto;
+  transition: background-image 1s ease-in-out, background-color 1s ease-in-out;
 }
 
 /* Background animato per la card container solo per Welcome */
@@ -280,28 +281,18 @@ body {
 /*__________________________________________________________________*/
 
 .card-container.projects-bg {
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
-  background-size: 200% 200%;
-  animation: gradientProjects 10s ease infinite;
+  background-image: url('../public/sfondo2.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
   border-radius: 0;
-}
-
-@keyframes gradientProjects {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  transition: background-image 1s ease-in-out;
 }
 
 .projects-container {
-  background-image: url('../public/sfondo_projects.jpg');
+  background-image: url('../public/sfondo1.png');
+  background-size: cover;
+  background-position: center;
   text-align: center;
   padding: 10rem;
   margin-top: -90px;
@@ -468,7 +459,7 @@ body {
 }
 
 .hobby-card {
-  background-color: rgba(245, 255, 250, 0.85);
+  background-color: rgb(239, 250, 245);
   border-radius: 1rem;
   padding: 1.5rem;
   width: 250px;
