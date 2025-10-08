@@ -79,7 +79,7 @@ body {
     cursor: default;
     justify-content:center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 50px;
     gap: 230px;
 }
 
@@ -606,49 +606,152 @@ body {
 
 
 
+/*__________________________________________________________*/
+/* 🔹 RESPONSIVE DESIGN per smartphone e piccoli tablet */
+/*__________________________________________________________*/
+@media (max-width: 768px) {
 
+  /* Navbar */
+  .navbar {
+    padding: 20px;
+    text-align: center;
+  }
 
+  .home-button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 
+  .home-button a svg {
+    width: 28px;
+    height: 28px;
+  }
 
+  .nav-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 10px;
+  }
 
+  .nav-list a {
+    font-size: 1rem;
+  }
 
+  .Profiles-List {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 30px;
+  }
 
+  .datetime-box {
+    position: static;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
 
+  /* Welcome section */
+  .welcome-content {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    text-align: center;
+  }
 
+  .welcome-photo {
+    width: 180px;
+    height: 180px;
+    margin-top: -150px;
+  }
 
+  .welcome-text {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
 
+  /* About me */
+  .aboutme-bg {
+    padding: 1.5rem;
+  }
 
-
-
-
-/*_________________________________________*/
-/* Per schermi piccoli (smartphone) */
-@media (max-width: 600px) {
-  
   .about-me-content {
     flex-direction: column;
     padding: 1rem;
+    margin-top: 0;
   }
 
   .profile-pic {
     width: 150px;
     height: 150px;
-    margin: 0 auto;
+    margin: 100px auto;
     display: block;
-    border-radius: 50%;
   }
 
-  .about-text-container {
-    min-width: auto;
+  .about-text h1 {
+    font-size: 1.8rem;
     text-align: center;
   }
 
-  .about-text,
+  .about-text p,
   .additional-info {
     font-size: 1rem;
+    text-align: center;
   }
+
+  /* Projects */
+  .projects-container {
+    padding: 2rem;
+    margin-top: 0;
+    height: auto;
+  }
+
+  .projects-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
   .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  /* Hobbies */
+  .hobbies-grid {
     flex-direction: column;
-    align-items: center;
+    gap: 6.5rem;
+  }
+
+  .hobby-card {
+    width: 90%;
+    margin: -48px auto;
+  }
+
+  .hobbies-title {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+
+  /* CV card */
+  .cv-card {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cv-button {
+    width: 80%;
+    text-align: center;
   }
 }
