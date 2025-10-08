@@ -2,6 +2,8 @@ import './App.css'
 import translations from './translations';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useAnimation, scale } from 'framer-motion';
+import { FaHome } from 'react-icons/fa';
+
 
 export default function MyApp() {
   const [selectedSection, setSelectedSection] = useState('Welcome');
@@ -17,9 +19,45 @@ export default function MyApp() {
 
 
 function Navbar({ onSelect, language, setLanguage }) {
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 60000); // aggiorna ogni minuto
+    return () => clearInterval(interval);
+  }, []);
+
+  // 🔹 Formattazione
+  const locale = language === 'it' ? 'it-IT' : 'en-GB';
+
+  const weekday = currentDateTime.toLocaleDateString(locale, { weekday: 'long' });
+  const date = currentDateTime.toLocaleDateString(locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+  const time = currentDateTime.toLocaleTimeString(locale, {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+
   return (
     <nav className='navbar'>
+      
       <ul className="nav-list">
+
+        <li className="home-button">
+          <a
+            href="#"
+            onClick={e => { e.preventDefault(); onSelect('Welcome'); }}
+            title={language === 'it' ? 'Home' : 'Home'}
+          >
+            <FaHome size={40} />
+          </a>
+        </li>
+
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('About Me'); }}>{language === 'it' ? 'Chi Sono' : 'About Me'}</a></li>
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Projects'); }}>{language === 'it' ? 'Progetti' : 'Projects'}</a></li>
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Hobbies'); }}>{language === 'it' ? 'Hobby' : 'Hobbies'}</a></li>
@@ -37,10 +75,21 @@ function Navbar({ onSelect, language, setLanguage }) {
           </select>
         </li>
       </ul>
+
+      
+
       <ul className='Profiles-List'>
+        
         <li><a href="https://github.com/simone2204">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/simone-arena-502b48a0/">Linkedin</a></li>
       </ul>
+
+      {/* 🔹 Data + ora orizzontali */}
+      <div className="datetime-box">
+        <span className="weekday">{weekday.charAt(0).toUpperCase() + weekday.slice(1)}</span>,&nbsp;
+        <span className="date">{date}</span>&nbsp;—&nbsp;
+        <span className="time">{time}</span>
+      </div>
     </nav>
   );
 }
@@ -148,9 +197,37 @@ function MainPage({ section, language }) {
         transition={{ duration: 1 }}
       />
 
-      <FloatingText>
-        {translations[language].welcome}
-      </FloatingText>
+      <div className="welcome-text-box">
+        <FloatingText>
+          {translations[language].welcome}
+        </FloatingText>
+
+        {/* 🔹 Box CV con effetto animato */}
+        <motion.div
+  className="cv-card"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+>
+  <h3>{language === 'it' ? 'Scarica il mio CV' : 'Download my CV'}</h3>
+  <div className="cv-buttons">
+    <a
+      href="/CV/Simone_Arena_CV_ITA.pdf"
+      download
+      className="cv-button"
+    >
+      🇮🇹 {language === 'it' ? 'CV Italiano' : 'Italian CV'}
+    </a>
+    <a
+      href="/CV/Simone_Arena_CV_EN.pdf"
+      download
+      className="cv-button"
+    >
+      🇬🇧 {language === 'it' ? 'CV Inglese' : 'English CV'}
+    </a>
+  </div>
+</motion.div>
+      </div>
     </motion.div>
   );
   break;

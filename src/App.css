@@ -18,6 +18,58 @@ body {
   top: 0;
 }
 
+.datetime-box {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1rem;
+  color: #e6e6e6;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  opacity: 0.9;
+}
+
+.datetime-box .weekday {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.datetime-box .time {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/*HOME ICON*/
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  margin-left: 70px;
+  padding: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.home-button a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+  color: #ffd700;
+}
+
+.nav-list .home-button a::after {
+  display: none;
+}
+
 .Profiles-List {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
@@ -27,7 +79,7 @@ body {
     cursor: default;
     justify-content:center;
     flex-wrap: wrap;
-    margin-top: 70px;
+    margin-top: 30px;
     gap: 230px;
 }
 
@@ -53,7 +105,7 @@ body {
   list-style: none;
   cursor: default;
   display: flex;
-  gap: 10rem;
+  gap: 8rem;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 45px;
@@ -201,6 +253,65 @@ body {
 
 .welcome-text:hover {
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.welcome-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* 🔹 Scheda CV */
+.cv-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 1.2rem 1.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cv-card h3 {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.cv-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #79e1c3;
+  color: #222;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #5fd2ae;
+  transform: scale(1.05);
 }
 
 /*_____________________________________________________________*/

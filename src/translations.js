@@ -2,7 +2,7 @@
 // ITALIAN TRANSLATIONS
 const translations = {
   it: {
-    welcome: "Ciao! Io sono Simone Arena. Benvenuto nel mio sito web! Clicca sulle sezioni in alto per sapere di più su di me",
+    welcome: "Ciao! Io sono Simone Arena. Benvenuti nel mio sito web! Clicca sulle sezioni in alto per sapere di più su di me, oppure:",
     aboutMeTitle: "Me, in poche parole",
     aboutMeText:
     `
@@ -87,7 +87,7 @@ const translations = {
   // _________________________________________________________________________________
   // ENGLISH TRANSLATIONS
   en: {
-    welcome: "Hello! I'm Simone Arena. Welcome to my website! Click on the sections above to find out more about me",
+    welcome: "Hello! I'm Simone Arena. Welcome to my website! Click on the sections above to find out more about me, or just:",
     aboutMeTitle: "Me, in a nutshell",
     aboutMeText:
     `
