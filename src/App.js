@@ -1,8 +1,9 @@
 import './App.css'
 import translations from './translations';
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useAnimation, scale } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation, scale, delay } from 'framer-motion';
 import { FaHome } from 'react-icons/fa';
+import GitHubProjects from "./components/GitHubProjects";
 
 
 export default function MyApp() {
@@ -48,15 +49,8 @@ function Navbar({ onSelect, language, setLanguage }) {
       
       <ul className="nav-list">
 
-        <li className="home-button">
-          <a
-            href="#"
-            onClick={e => { e.preventDefault(); onSelect('Welcome'); }}
-            title={language === 'it' ? 'Home' : 'Home'}
-          >
-            <FaHome size={40} />
-          </a>
-        </li>
+        <li className="home-button"><a href="#" onClick={e => { e.preventDefault(); onSelect('Welcome'); }}title={language === 'it' ? 'Home' : 'Home'}
+          ><FaHome size={40} /></a></li>
 
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('About Me'); }}>{language === 'it' ? 'Chi Sono' : 'About Me'}</a></li>
         <li><a href="#" onClick={e => { e.preventDefault(); onSelect('Projects'); }}>{language === 'it' ? 'Progetti' : 'Projects'}</a></li>
@@ -97,39 +91,86 @@ function Navbar({ onSelect, language, setLanguage }) {
 
 const variantsBySection = {
   'Welcome': {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
-    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+    initial: { opacity: 0, scale: 0.95 },
+    animate: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] } 
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.95, 
+      transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] } 
+    },
   },
 
   'About Me': {
-  initial: { x: -100, opacity: 0, scale: 0.9 },
-  animate: {
-    x: 0,
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" }
+    initial: { x: -50, opacity: 0, scale: 0.96 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { 
+        duration: 0.6, 
+        ease: [0.25, 0.46, 0.45, 0.94],
+        opacity: { duration: 0.7 }
+      }
+    },
+    exit: {
+      x: -30,
+      opacity: 0,
+      scale: 0.98,
+      transition: { 
+        duration: 0.7, 
+        ease: [0.43, 0.13, 0.23, 0.96]
+      }
+    },
   },
-  exit: {
-    x: 100,
-    opacity: 0,
-    scale: 0.9,
-    transition: { duration: 0.6, ease: "easeIn" }
-  },
-},
-
 
   'Projects': {
-  initial: { y: 100, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
-  exit: { y: -100, opacity: 0, transition: { duration: 0.6, ease: "easeIn" } },
-},
-
+    initial: { y: 60, opacity: 0, scale: 0.96 },
+    animate: { 
+      y: 0, 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        duration: 0.7, 
+        ease: [0.25, 0.46, 0.45, 0.94],
+        opacity: { duration: 0.7 }
+      } 
+    },
+    exit: { 
+      y: -30, 
+      opacity: 0, 
+      scale: 0.98,
+      transition: { 
+        duration: 0.7, 
+        ease: [0.43, 0.13, 0.23, 0.96]
+      } 
+    },
+  },
 
   'Hobbies': {
-    initial: { scale: 0.8, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    exit: { scale: 1.2, opacity: 0 }
+    initial: { scale: 0.96, opacity: 0, y: 30 },
+    animate: { 
+      scale: 1, 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.7, 
+        ease: [0.25, 0.46, 0.45, 0.94],
+        opacity: { duration: 0.7 }
+      }
+    },
+    exit: { 
+      scale: 0.98, 
+      opacity: 0,
+      y: -20,
+      transition: { 
+        duration: 0.7, 
+        ease: [0.43, 0.13, 0.23, 0.96]
+      }
+    }
   },
 };
 
@@ -138,13 +179,13 @@ function FloatingText({ children }) {
 
   useEffect(() => {
     async function sequence() {
-      // prima fa apparire il testo
+      
       await controls.start({ 
         opacity: 1, 
         y: 0, 
         rotate: 0, 
         transition: { duration: 1.2, ease: "easeOut" } });
-      // poi avvia il loop di oscillazione
+      
       controls.start({
         y: [0, 1, 0, -1, 0],
         x: [0, 0.5, 0, -0.5, 0],
@@ -165,7 +206,6 @@ function FloatingText({ children }) {
       className="welcome-text"
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
-      // rimuovi transition dal motion.div perché gestita da controls
     >
       {children}
     </motion.div>
@@ -238,6 +278,7 @@ function MainPage({ section, language }) {
   case 'About Me':
   content = (
     <div className="about-me-content">
+      
       <motion.img
         src="/foto_0.jpg"
         alt="Foto profilo"
@@ -430,7 +471,6 @@ case 'Projects':
       content = <h1>Sezione non trovata.</h1>;
   }
 
-  // Prendi le animazioni per la sezione corrente
   const variants = variantsBySection[section] || {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
