@@ -3,7 +3,6 @@ import translations from './translations';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useAnimation, scale, delay } from 'framer-motion';
 import { FaHome } from 'react-icons/fa';
-import GitHubProjects from "./components/GitHubProjects";
 
 
 export default function MyApp() {
@@ -308,6 +307,7 @@ function MainPage({ section, language }) {
 /*OGGETTO PROJECTS*/
 case 'Projects':
   content = (
+    
     <AnimatePresence mode="wait">
       {projectView === null ? (
         <motion.div
@@ -464,8 +464,6 @@ case 'Projects':
   );
   break;
   
-
-    
 
     default:
       content = <h1>Sezione non trovata.</h1>;
