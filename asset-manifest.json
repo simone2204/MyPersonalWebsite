@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/MyPersonalWebsite/static/css/main.01d616b0.css",
-    "main.js": "/MyPersonalWebsite/static/js/main.c2b42603.js",
+    "main.js": "/MyPersonalWebsite/static/js/main.4acd3ded.js",
     "static/js/453.074bcdc9.chunk.js": "/MyPersonalWebsite/static/js/453.074bcdc9.chunk.js",
     "static/media/sfondo2.png": "/MyPersonalWebsite/static/media/sfondo2.da241d434d811f52ec89.png",
     "static/media/sfondo1.png": "/MyPersonalWebsite/static/media/sfondo1.08f5ed552d570bd5b733.png",
     "static/media/sfondo_initial_page.jpg": "/MyPersonalWebsite/static/media/sfondo_initial_page.8ddad695876ebc61413a.jpg",
     "static/media/sfondo4.png": "/MyPersonalWebsite/static/media/sfondo4.d192d30af63af6d57a1f.png",
     "static/media/sfondo_hobby.png": "/MyPersonalWebsite/static/media/sfondo_hobby.bf84d89c4641f5f78445.png",
+    "static/media/foto_0.jpg": "/MyPersonalWebsite/static/media/foto_0.f20ad537750269996572.jpg",
     "index.html": "/MyPersonalWebsite/index.html",
     "main.01d616b0.css.map": "/MyPersonalWebsite/static/css/main.01d616b0.css.map",
-    "main.c2b42603.js.map": "/MyPersonalWebsite/static/js/main.c2b42603.js.map",
+    "main.4acd3ded.js.map": "/MyPersonalWebsite/static/js/main.4acd3ded.js.map",
     "453.074bcdc9.chunk.js.map": "/MyPersonalWebsite/static/js/453.074bcdc9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01d616b0.css",
-    "static/js/main.c2b42603.js"
+    "static/js/main.4acd3ded.js"
   ]
 }
