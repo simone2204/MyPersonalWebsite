@@ -674,33 +674,64 @@ body {
   }
 
   /* ABOUT ME SECTION for SMARTPHONE*/
-  .aboutme-bg {
-    padding: 1.5rem;
-  }
-
-  .about-me-content {
-    flex-direction: column;
-    padding: 1rem;
-    margin-top: 0;
-  }
-
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    margin: 100px auto;
-    display: block;
-  }
-
-  .about-text h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .about-text p,
-  .additional-info {
-    font-size: 1rem;
-    text-align: center;
-  }
+        @media (max-width: 768px) {
+    
+          .aboutme-bg {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* il contenuto parte dall’alto */
+            padding: 180px 1rem 2rem 1rem;
+            /* spinge la scheda più in basso */
+            min-height: 100vh;
+            /* altezza minima pieno schermo */
+            background-image: url('../public/sfondo_initial_page.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+          }
+    
+          .about-me-content {
+            flex-direction: column;
+            padding: 2rem;
+            margin: 0 auto;
+            /* centra la scheda orizzontalmente */
+            max-width: 90%;
+            /* lascia un po' di margine laterale */
+            background: rgba(255, 255, 255, 0.75);
+            /* leggero sfondo bianco trasparente */
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+          }
+    
+          .profile-pic {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px auto;
+            /* spazio sotto la foto */
+            display: block;
+          }
+    
+          .about-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            /* centra testo */
+          }
+    
+          .about-text h1 {
+            font-size: 1.8rem;
+            text-align: center;
+          }
+    
+          .about-text p,
+          .additional-info {
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
 
   /* Projects */
   .projects-container {
