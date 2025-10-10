@@ -280,7 +280,7 @@ function MainPage({ section, language }) {
     <div className="about-me-content">
       
       <motion.img
-        src={profilePic}
+        src={require ('./assets/foto_0.jpg')}
         alt="Foto profilo"
         className="profile-pic"
         initial={{ opacity: 0, x: -50 }}
