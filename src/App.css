@@ -678,9 +678,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      /* ← non più center, così il contenuto parte dall’alto */
       padding: 120px 1rem 2rem 1rem;
-      /* ↑ spinge la scheda più in basso, ↓ spazio sotto */
       min-height: 100vh;
     }
   
@@ -688,14 +686,12 @@ body {
       flex-direction: column;
       padding: 2rem;
       margin-top: 0;
-      /* margin-top non serve più */
     }
   
     .profile-pic {
       width: 150px;
       height: 150px;
       margin: 0 auto 20px auto;
-      /* solo spazio sotto la foto */
       display: block;
     }
 
