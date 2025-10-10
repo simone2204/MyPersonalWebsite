@@ -3,6 +3,7 @@ import translations from './translations';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useAnimation, scale, delay } from 'framer-motion';
 import { FaHome } from 'react-icons/fa';
+import profilePic from './assets/foto_0.jpg';
 
 
 export default function MyApp() {
@@ -228,7 +229,7 @@ function MainPage({ section, language }) {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <motion.img
-        src="/foto_0.jpg"
+        src={profilePic}
         alt="Foto di Simone Arena"
         className="welcome-photo"
         initial={{ opacity: 0, x: -40 }}
