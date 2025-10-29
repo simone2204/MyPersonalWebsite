@@ -252,14 +252,14 @@ function MainPage({ section, language }) {
   <h3>{language === 'it' ? 'Scarica il mio CV' : 'Download my CV'}</h3>
   <div className="cv-buttons">
     <a
-      href={`${process.env.PUBLIC_URL}/CV/SimoneArena_CV_ITA.pdf`}
+      href={`${process.env.PUBLIC_URL}/CV/SimoneArenaCV_ITA.pdf`}
       download
       className="cv-button"
     >
       🇮🇹 {language === 'it' ? 'CV Italiano' : 'Italian CV'}
     </a>
     <a
-      href={`${process.env.PUBLIC_URL}/CV/SimoneArena_CV_ENG.pdf`}
+      href={`${process.env.PUBLIC_URL}/CV/SimoneArenaCV_ENG.pdf`}
       download
       className="cv-button"
     >
