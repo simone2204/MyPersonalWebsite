@@ -259,7 +259,7 @@ function MainPage({ section, language }) {
       🇮🇹 {language === 'it' ? 'CV Italiano' : 'Italian CV'}
     </a>
     <a
-      href={`${process.env.PUBLIC_URL}/CV/Simone_Arena_CV_EN.pdf`}
+      href={`${process.env.PUBLIC_URL}/CV/Simone_Arena_CV_ENG.pdf`}
       download
       className="cv-button"
     >
